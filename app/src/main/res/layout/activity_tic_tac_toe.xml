@@ -10,6 +10,12 @@
         android:layout_height="wrap_content">
 
         <Button
+            android:id="@+id/b0"
+            style="@style/AppTheme.TicTacToeButtons"
+            android:onClick="btnClick"
+            android:text="" />
+
+        <Button
             android:id="@+id/b1"
             style="@style/AppTheme.TicTacToeButtons"
             android:onClick="btnClick"
@@ -20,17 +26,17 @@
             style="@style/AppTheme.TicTacToeButtons"
             android:onClick="btnClick"
             android:text="" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
         <Button
             android:id="@+id/b3"
             style="@style/AppTheme.TicTacToeButtons"
             android:onClick="btnClick"
             android:text="" />
-    </TableRow>
-
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
         <Button
             android:id="@+id/b4"
@@ -40,12 +46,6 @@
 
         <Button
             android:id="@+id/b5"
-            style="@style/AppTheme.TicTacToeButtons"
-            android:onClick="btnClick"
-            android:text="" />
-
-        <Button
-            android:id="@+id/b6"
             style="@style/AppTheme.TicTacToeButtons"
             android:layout_centerInParent="true"
             android:onClick="btnClick"
@@ -57,6 +57,12 @@
         android:layout_height="wrap_content">
 
         <Button
+            android:id="@+id/b6"
+            style="@style/AppTheme.TicTacToeButtons"
+            android:onClick="btnClick"
+            android:text="" />
+
+        <Button
             android:id="@+id/b7"
             style="@style/AppTheme.TicTacToeButtons"
             android:onClick="btnClick"
@@ -64,12 +70,6 @@
 
         <Button
             android:id="@+id/b8"
-            style="@style/AppTheme.TicTacToeButtons"
-            android:onClick="btnClick"
-            android:text="" />
-
-        <Button
-            android:id="@+id/b9"
             style="@style/AppTheme.TicTacToeButtons"
             android:onClick="btnClick"
             android:text="" />
