@@ -3,5 +3,5 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="game_btn_padding">128dp</dimen>
-    <dimen name="game_btn_text">32sp</dimen>
+    <dimen name="game_btn_text">64sp</dimen>
 </resources>

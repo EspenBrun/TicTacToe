@@ -14,7 +14,9 @@ public class TicTacToeActivity extends AppCompatActivity {
     private final String TAG = "TicTacToeActivity";
     private Button b;
     private Resources res;
-    private boolean playerOneTurn = true;
+    private boolean playerTurn = true;
+    private final String X = "X";
+    private final String O = "O";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,8 +28,15 @@ public class TicTacToeActivity extends AppCompatActivity {
     public void btnClick(View v){
         int id = v.getId();
         b = (Button) v;
-        Log.i(TAG, "the id " + id);
-        b.setText("X");
-        b.setTextColor(res.getColor(R.color.colorPlayerOne));
+        if(playerTurn){
+            b.setText("X");
+            b.setTextColor(res.getColor(R.color.colorPlayerOne));
+            playerTurn = !playerTurn;
+        } else {
+            b.setText("O");
+            b.setTextColor(res.getColor(R.color.colorPlayerTwo));
+            playerTurn = !playerTurn;
+        }
+
     }
 }
