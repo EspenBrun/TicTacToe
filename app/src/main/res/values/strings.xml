@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Tic Tac Toe</string>
+    <string name="rules">The goal is to get 3 in a row and each person must switch taking turns. In order to win, the 3 symbols must all connect in a straight line in one direction, up or down, left or right, or diagonally.</string>
+    <string name="ok">Ok</string>
+    <string name="player_1">Player 1</string>
+    <string name="player_2">Player 2</string>
+    <string name="write_your_names_and_how_many_rounds_you_want_to_play">Write your names and how many rounds you want to play</string>
+    <string name="number_of_rounds">Number of rounds</string>
+    <string name="start">Start</string>
+</resources>

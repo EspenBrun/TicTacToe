@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/write_names"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/activity_horizontal_margin"
+        android:text="@string/write_your_names_and_how_many_rounds_you_want_to_play" />
+
+    <EditText
+        android:id="@+id/player1Field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/write_names"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:hint="@string/player_1" />
+
+    <EditText
+        android:id="@+id/player2Field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/player1Field"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:hint="@string/player_2" />
+
+    <EditText
+        android:id="@+id/roundsField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/player2Field"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:hint="@string/number_of_rounds" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:onClick="start"
+        android:text="@string/start" />
+
+</RelativeLayout>
