@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Bondesjakk</string>
+    <string name="both_won_rounds">Både %1$s og %2$s vant %3$d av %4$d runder</string>
+    <string name="draw">Uavgjort!</string>
+    <string name="exit">Exit</string>
+    <string name="lost">\u0020Tapte</string>
+    <string name="moves_per_match">Flytt per runde:</string>
+    <string name="name_lost">%1$s tapte.</string>
+    <string name="name_won">%1$s vant!</string>
+    <string name="new_game">Nytt spill</string>
+    <string name="number_of_rounds">Antall runder</string>
+    <string name="ok">Ok</string>
+    <string name="p1_name_default">Player 1</string>
+    <string name="p2_name_default">Player 2</string>
+    <string name="player_1">Player 1</string>
+    <string name="player_2">Player 2</string>
+    <string name="round_moves">Runde %1$d: %2$d flytt</string>
+    <string name="rounds">Runder</string>
+    <string name="rounds_must_be_positive_toast">Antall runder må være positivt og navnene forskjellig</string>
+    <string name="rules">Målet er å få 3 på rad og man spiller etter tur. For å vinne må en spillers symbol danne en rett linje på 3 symboler, enten horisontalt, vertikalt eller diagonalt.</string>
+    <string name="start">Start</string>
+    <string name="won">\u0020vant!</string>
+    <string name="won_rounds_out_of">%1$s vant %2$d av %3$d runder.</string>
+    <string name="write_names_to_play_toast">Oppgi navn og antall runder</string>
+    <string name="write_your_names_and_how_many_rounds_you_want_to_play">Oppgi navn og hvor mange runder dere vil spille</string>
+    <string name="summary">Sammendrag</string>
+    <string name="wins_info">%1$s:  %2$d      %3$s: %4$d</string>
+    <string name="rounds_info">Runde %1$d/%2$d</string>
+    <string name="round_info">Runde %1$d/%2$d</string>
+    <string name="symbol_name">%1$s: %2$s</string>
+</resources>

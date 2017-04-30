@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -55,15 +54,12 @@ public class TicTacToeActivity extends AppCompatActivity {
     private int moves = 0;
     private ArrayList<Integer> movesList = new ArrayList<>();
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tic_tac_toe);
         initializeGame();
     }
-
-
 
     public void initializeGame(){
         p1View = (TextView) findViewById(R.id.p1View);
@@ -81,9 +77,9 @@ public class TicTacToeActivity extends AppCompatActivity {
             rounds = extras.getInt("rounds", 1);
             p1Name = extras.getString("p1Name", res.getString(R.string.p1_name_default));
             p2Name = extras.getString("p2Name", res.getString(R.string.p2_name_default));
-            p1View.setText(X + ": " + p1Name);
-            p2View.setText(O + ": " + p2Name);
-            roundsView.setText(res.getString(R.string.rounds) + ": " + currentRound + "/" + rounds);
+            p1View.setText(getString(R.string.symbol_name, X, p1Name));
+            p2View.setText(getString(R.string.symbol_name, X, p1Name));
+            roundsView.setText(res.getString(R.string.round_info, currentRound, rounds));
         }
     }
 
@@ -138,21 +134,21 @@ public class TicTacToeActivity extends AppCompatActivity {
     private void ifAWinner(){
         if(p1Won || p2Won || moves == 9){
             if (p1Won){
-                winnerView.setText(p1Name + res.getString(R.string.won));
+                winnerView.setText(res.getString(R.string.name_won, p1Name));
                 XWins++;
             } else if(p2Won){
-                winnerView.setText(p2Name + res.getString(R.string.won));
+                winnerView.setText(res.getString(R.string.name_won, p2Name));
                 OWins++;
             } else if (moves == 9){
                 winnerView.setText(R.string.draw);
             }
             if(currentRound == rounds){
-                nextRound.setText("Summary");
+                nextRound.setText(R.string.summary);
             }
             movesList.add(moves);
             winnerView.setVisibility(View.VISIBLE);
             nextRound.setVisibility(View.VISIBLE);
-            currentScoreView.setText(p1Name + ": " + XWins + " " + p2Name + ": " + OWins );
+            currentScoreView.setText(getString(R.string.wins_info, p1Name, XWins, p2Name, OWins));
         }
     }
 
@@ -188,7 +184,7 @@ public class TicTacToeActivity extends AppCompatActivity {
             nextRound.setVisibility(View.GONE);
             currentRound++;
             moves=0;
-            roundsView.setText(res.getString(R.string.rounds) + ": " + currentRound + "/" + rounds);
+            roundsView.setText(getString(R.string.round_info, currentRound, rounds));
         } else {
             Intent i = new Intent("ebru.summaryActivity");
             Bundle extras = new Bundle();
