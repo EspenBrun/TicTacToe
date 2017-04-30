@@ -31,6 +31,7 @@ public class TicTacToeActivity extends AppCompatActivity {
     private TextView p2View;
     private TextView roundsView;
     private TextView winnerView;
+    private TextView currentScoreView;
     private Button nextRound;
     private Button b;
 
@@ -69,6 +70,7 @@ public class TicTacToeActivity extends AppCompatActivity {
         p2View = (TextView) findViewById(R.id.p2View);
         roundsView = (TextView) findViewById(R.id.roundsView);
         winnerView = (TextView) findViewById(R.id.winnerView);
+        currentScoreView = (TextView) findViewById(R.id.currentScoreView);
         nextRound = (Button) findViewById(R.id.nextRound);
         res = getResources();
         getBtnIds();
@@ -132,17 +134,23 @@ public class TicTacToeActivity extends AppCompatActivity {
         else {
             playerMove(id);
         }
-        if (p1Won){
-            winnerView.setText("P1 won!");
+        ifAWinner();
+    }
+
+    private void ifAWinner(){
+        if(p1Won || p2Won){
+            if (p1Won){
+                winnerView.setText("P1 won!");
+                XWins++;
+            } else if(p2Won){
+                winnerView.setText("P2 won!");
+                OWins++;
+            }
             winnerView.setVisibility(View.VISIBLE);
             nextRound.setVisibility(View.VISIBLE);
-            XWins++;
-        } else if(p2Won){
-            winnerView.setText("P2 won!");
-            winnerView.setVisibility(View.VISIBLE);
-            nextRound.setVisibility(View.VISIBLE);
-            OWins++;
+            currentScoreView.setText(p1Name + ": " + XWins + " " + p2Name + ": " + OWins );
         }
+
     }
 
     public boolean spotTaken(int id){
