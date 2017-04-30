@@ -3,6 +3,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+        <TextView
+            android:id="@+id/p1View"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Player1 is Espen" />
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/p2View"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Player2 is Espen" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/roundsView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nmber of rounds is1" />
+    </TableRow>
+
 
     <TableRow
         android:layout_width="match_parent"
@@ -80,6 +108,15 @@
         android:layout_height="wrap_content"
         android:paddingTop="@dimen/activity_horizontal_margin"
         android:text=""
-        android:visibility="gone" />
+        android:visibility="gone"
+        android:paddingBottom="@dimen/activity_horizontal_margin"/>
+
+    <Button
+        android:id="@+id/nextRound"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next round"
+        android:onClick="nextRound"
+        android:visibility="gone"/>
 
 </TableLayout>

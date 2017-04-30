@@ -33,9 +33,9 @@ public class PlayersActivity extends AppCompatActivity {
         String p2Name = p2Field.getText().toString().trim();
         String roundsInput = roundsField.getText().toString().trim();
 
-        if(p1Name.isEmpty() || p2Name.isEmpty() || roundsInput.isEmpty() || p1Name.equals(p2Name)){
+        if(p1Name.isEmpty() || p2Name.isEmpty() || roundsInput.isEmpty() ){
             toast.makeText(PlayersActivity.this, R.string.write_names_to_play_toast, Toast.LENGTH_SHORT).show();
-        } else if(Integer.valueOf(roundsInput) < 1) {
+        } else if(Integer.valueOf(roundsInput) < 1 || p1Name.equals(p2Name)) {
             toast.makeText(PlayersActivity.this, R.string.rounds_must_be_positive_toast, Toast.LENGTH_SHORT).show();
         } else {
             int rounds = Integer.valueOf(roundsInput);
@@ -44,6 +44,7 @@ public class PlayersActivity extends AppCompatActivity {
             extras.putInt("rounds",rounds);
             extras.putString("p1Name", p1Name);
             extras.putString("p2Name", p2Name);
+            i.putExtras(extras);
             startActivity(i);
             finish();
         }

@@ -8,5 +8,8 @@
     <string name="number_of_rounds">Number of rounds</string>
     <string name="start">Start</string>
     <string name="write_names_to_play_toast">Give names and number of rounds</string>
-    <string name="rounds_must_be_positive_toast">Number of rounds must be positive</string>
+    <string name="rounds_must_be_positive_toast">Number of rounds must be positive and names different</string>
+    <string name="p1_name_default">Player 1</string>
+    <string name="p2_name_default">Player 2</string>
+    <string name="rounds">Rounds</string>
 </resources>
