@@ -127,8 +127,8 @@ public class TicTacToeActivity extends AppCompatActivity {
         else if (spotTaken(id)) { }
         else {
             playerMove(id);
+            ifAWinner();
         }
-        ifAWinner();
     }
 
     private void ifAWinner(){
