@@ -50,9 +50,15 @@ public class TicTacToeActivity extends AppCompatActivity {
     public boolean hasWon(ArrayList pBtns){
         int i = 0;
         boolean hasWon = false;
+        ArrayList<Integer> subList = new ArrayList<Integer>();
+        subList.add(0);
+        subList.add(0);
+        subList.add(0);
         Log.i(TAG,"pBtns:" + pBtns.toString());
         while(!hasWon && i<NUM_WINS_COMB){
-            List<Integer> subList = new List<String>(winCombIds.subList(i,i+3));
+            subList.set(0, winCombIds.get(3*i));
+            subList.set(1, winCombIds.get(3*i+1));
+            subList.set(2, winCombIds.get(3*i+2));
             hasWon = pBtns.containsAll(subList);
             Log.i(TAG, "hasWon: " + hasWon + ", the ids i check are " + winCombIds.subList(3*i,3*i+3).toString());
             i++;
