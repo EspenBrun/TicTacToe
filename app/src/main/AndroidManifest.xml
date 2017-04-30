@@ -34,7 +34,14 @@
                 <action android:name="ebru.ticTacToeActivity" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-        </activity>
+        </activity><activity
+        android:name=".SummaryActivity"
+        android:label="@string/app_name">
+        <intent-filter>
+            <action android:name="ebru.summaryActivity" />
+            <category android:name="android.intent.category.DEFAULT" />
+        </intent-filter>
+    </activity>
     </application>
 
 </manifest>

@@ -57,11 +57,7 @@ public class TicTacToeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tic_tac_toe);
-
         initializeGame();
-        Bundle extras = getIntent().getExtras();
-        String lol = extras.getString("p1Name","virker ikke");
-        Log.i(TAG,"Viker det? " + lol);
     }
 
 
@@ -149,6 +145,9 @@ public class TicTacToeActivity extends AppCompatActivity {
             } else if (moves == 9){
                 winnerView.setText(R.string.draw);
             }
+            if(currentRound == rounds){
+                nextRound.setText("Summary");
+            }
             winnerView.setVisibility(View.VISIBLE);
             nextRound.setVisibility(View.VISIBLE);
             currentScoreView.setText(p1Name + ": " + XWins + " " + p2Name + ": " + OWins );
@@ -189,6 +188,17 @@ public class TicTacToeActivity extends AppCompatActivity {
             currentRound++;
             moves=0;
             roundsView.setText(res.getString(R.string.rounds) + ": " + currentRound + "/" + rounds);
+        } else {
+            Intent i = new Intent("ebru.summaryActivity");
+            Bundle extras = new Bundle();
+            extras.putString("p1Name", p1Name);
+            extras.putString("p2Name", p2Name);
+            extras.putInt("rounds", rounds);
+            extras.putInt("XWins", XWins);
+            extras.putInt("OWins", OWins);
+            i.putExtras(extras);
+            startActivity(i);
+            finish();
         }
     }
 }
