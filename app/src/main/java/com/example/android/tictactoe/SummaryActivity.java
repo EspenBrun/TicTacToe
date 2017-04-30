@@ -1,11 +1,13 @@
 package com.example.android.tictactoe;
 
+import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
-import android.widget.Adapter;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -66,8 +68,10 @@ public class SummaryActivity extends AppCompatActivity {
 
     public void movesList(){
         ArrayList<String> allTheMoves = new ArrayList<>();
+        int currentRound;
         for (int i = 0; i < movesList.size(); i++) {
-            allTheMoves.add("Round " + i + ": " + movesList.get(i) + " moves");
+            currentRound = i + 1;
+            allTheMoves.add("Round " + currentRound + ": " + movesList.get(i) + " moves");
         }
         ArrayAdapter<String> a = new ArrayAdapter<>(SummaryActivity.this, android.R.layout.simple_list_item_1, allTheMoves);
         movesListView.setAdapter(a);
@@ -77,4 +81,30 @@ public class SummaryActivity extends AppCompatActivity {
         finish();
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_ingame, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if(id == R.id.new_game){
+            newGame();
+        } else if (id == R.id.menu_exit){
+            Intent intent = new Intent(this, MainActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            intent.putExtra("Exit me", true);
+            startActivity(intent);
+            finish();
+        }
+        return true;
+    }
+
+    public void newGame(){
+        Intent i = new Intent("ebru.playersActivity");
+        startActivity(i);
+        finish();
+    }
 }

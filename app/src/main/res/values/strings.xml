@@ -16,4 +16,6 @@
     <string name="lost">\u0020lost.</string>
     <string name="draw">Draw!</string>
     <string name="moves_per_match">Moves per match:</string>
+    <string name="new_game">New game</string>
+    <string name="exit">Exit</string>
 </resources>
