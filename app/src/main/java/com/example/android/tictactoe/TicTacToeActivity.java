@@ -137,10 +137,10 @@ public class TicTacToeActivity extends AppCompatActivity {
     private void ifAWinner(){
         if(p1Won || p2Won || moves == 9){
             if (p1Won){
-                winnerView.setText(p1Name + " " + res.getString(R.string.won));
+                winnerView.setText(p1Name + res.getString(R.string.won));
                 XWins++;
             } else if(p2Won){
-                winnerView.setText(p2Name + " " + res.getString(R.string.won));
+                winnerView.setText(p2Name + res.getString(R.string.won));
                 OWins++;
             } else if (moves == 9){
                 winnerView.setText(R.string.draw);
@@ -173,7 +173,6 @@ public class TicTacToeActivity extends AppCompatActivity {
             playerTurn = !playerTurn;
         }
         moves++;
-        Log.i(TAG, "moves: " + moves);
     }
 
     public void nextRound(View v){

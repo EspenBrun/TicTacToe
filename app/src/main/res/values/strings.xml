@@ -12,6 +12,7 @@
     <string name="p1_name_default">Player 1</string>
     <string name="p2_name_default">Player 2</string>
     <string name="rounds">Rounds</string>
-    <string name="won">won!</string>
+    <string name="won">\u0020won!</string>
+    <string name="lost">\u0020lost.</string>
     <string name="draw">Draw!</string>
 </resources>
