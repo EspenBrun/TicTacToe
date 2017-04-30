@@ -18,4 +18,9 @@
     <string name="moves_per_match">Moves per match:</string>
     <string name="new_game">New game</string>
     <string name="exit">Exit</string>
+    <string name="name_won">%1$s won!</string>
+    <string name="name_lost">%1$s lost.</string>
+    <string name="won_rounds_out_of">%1$s won %2$d out of %3$d matches.</string>
+    <string name="both_won_rounds">Both %1$s and %2$s won %3$d out of %4$d matches</string>
+    <string name="round_moves">Round %1$d: %2$d moves</string>
 </resources>

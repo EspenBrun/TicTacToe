@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -48,19 +47,18 @@ public class SummaryActivity extends AppCompatActivity {
             XWins = extras.getInt("XWins", -1);
             OWins = extras.getInt("OWins", -1);
             movesList = extras.getIntegerArrayList("movesList");
-            Log.i(TAG,"movesList: " + movesList.toString());
             if(XWins > OWins){
-                winnerViewSummary.setText(p1Name + getString(R.string.won));
-                looserView.setText(p2Name + getString(R.string.lost));
-                summaryView.setText(p1Name + " won " + XWins + " out of " + rounds + " matches.");
+                winnerViewSummary.setText(getString(R.string.name_won, p1Name));
+                looserView.setText(getString(R.string.name_lost, p2Name));
+                summaryView.setText(getString(R.string.won_rounds_out_of, p1Name, XWins, rounds));
             } else if (OWins > XWins) {
-                winnerViewSummary.setText(p2Name + getString(R.string.won));
-                looserView.setText(p1Name + getString(R.string.lost));
-                summaryView.setText(p2Name + " won " + OWins + " out of " + rounds + " matches.");
+                winnerViewSummary.setText(getString(R.string.name_won, p2Name));
+                looserView.setText(getString(R.string.name_lost, p1Name));
+                summaryView.setText(getString(R.string.won_rounds_out_of, p2Name, OWins, rounds));
             } else {
                 winnerViewSummary.setText(R.string.draw);
                 looserView.setVisibility(View.GONE);
-                summaryView.setText("Both " + p1Name + " and " + p2Name + " won "  + rounds/2 + " out of " + rounds + " matches");
+                summaryView.setText(getString(R.string.both_won_rounds, p1Name, p2Name, rounds/2, rounds));
             }
             movesList();
         }
@@ -71,14 +69,14 @@ public class SummaryActivity extends AppCompatActivity {
         int currentRound;
         for (int i = 0; i < movesList.size(); i++) {
             currentRound = i + 1;
-            allTheMoves.add("Round " + currentRound + ": " + movesList.get(i) + " moves");
+            allTheMoves.add(getString(R.string.round_moves, currentRound, movesList.get(i)));
         }
         ArrayAdapter<String> a = new ArrayAdapter<>(SummaryActivity.this, android.R.layout.simple_list_item_1, allTheMoves);
         movesListView.setAdapter(a);
     }
 
     public void newGame(View v){
-        finish();
+        newGame();
     }
 
     @Override
