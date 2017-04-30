@@ -7,4 +7,6 @@
     <string name="write_your_names_and_how_many_rounds_you_want_to_play">Write your names and how many rounds you want to play</string>
     <string name="number_of_rounds">Number of rounds</string>
     <string name="start">Start</string>
+    <string name="write_names_to_play_toast">Give names and number of rounds</string>
+    <string name="rounds_must_be_positive_toast">Number of rounds must be positive</string>
 </resources>

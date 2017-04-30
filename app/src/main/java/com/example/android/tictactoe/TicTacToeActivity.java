@@ -60,7 +60,6 @@ public class TicTacToeActivity extends AppCompatActivity {
             subList.set(1, winCombIds.get(3*i+1));
             subList.set(2, winCombIds.get(3*i+2));
             hasWon = pBtns.containsAll(subList);
-            Log.i(TAG, "hasWon: " + hasWon + ", the ids i check are " + winCombIds.subList(3*i,3*i+3).toString());
             i++;
         }
         return hasWon;
@@ -78,8 +77,6 @@ public class TicTacToeActivity extends AppCompatActivity {
         for(int tile : WIN_COMB){
             winCombIds.add(btnIds[tile]);
         }
-//        Log.i(TAG,"The button ids: " + Arrays.toString(btnIds));
-//        Log.i(TAG,"All the ids in the win ids: " + winCombIds.toString());
     }
 
     public void btnClick(View v){
