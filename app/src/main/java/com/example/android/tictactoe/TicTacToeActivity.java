@@ -78,7 +78,7 @@ public class TicTacToeActivity extends AppCompatActivity {
             p1Name = extras.getString("p1Name", res.getString(R.string.p1_name_default));
             p2Name = extras.getString("p2Name", res.getString(R.string.p2_name_default));
             p1View.setText(getString(R.string.symbol_name, X, p1Name));
-            p2View.setText(getString(R.string.symbol_name, X, p1Name));
+            p2View.setText(getString(R.string.symbol_name, O, p2Name));
             roundsView.setText(res.getString(R.string.round_info, currentRound, rounds));
         }
     }
