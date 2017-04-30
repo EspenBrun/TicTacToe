@@ -51,6 +51,7 @@ public class TicTacToeActivity extends AppCompatActivity {
     private int XWins = 0;
     private int OWins = 0;
     private int moves = 0;
+    private ArrayList<Integer> movesList = new ArrayList<>();
 
 
     @Override
@@ -91,7 +92,6 @@ public class TicTacToeActivity extends AppCompatActivity {
         subList.add(0);
         subList.add(0);
         subList.add(0);
-        Log.i(TAG,"pBtns:" + pBtns.toString());
         while(!hasWon && i<NUM_WINS_COMB){
             subList.set(0, winCombIds.get(3*i));
             subList.set(1, winCombIds.get(3*i+1));
@@ -104,7 +104,6 @@ public class TicTacToeActivity extends AppCompatActivity {
 
     public void getBtnIds(){
         btnIds = new int[9];
-        Log.i(TAG,"length " + btnIds.length);
         for (int i = 0; i < btnIds.length; i++) {
             btnIds[i] = res.getIdentifier("b"+i, "id", getPackageName());
         }
@@ -148,6 +147,7 @@ public class TicTacToeActivity extends AppCompatActivity {
             if(currentRound == rounds){
                 nextRound.setText("Summary");
             }
+            movesList.add(moves);
             winnerView.setVisibility(View.VISIBLE);
             nextRound.setVisibility(View.VISIBLE);
             currentScoreView.setText(p1Name + ": " + XWins + " " + p2Name + ": " + OWins );
@@ -195,6 +195,7 @@ public class TicTacToeActivity extends AppCompatActivity {
             extras.putInt("rounds", rounds);
             extras.putInt("XWins", XWins);
             extras.putInt("OWins", OWins);
+            extras.putIntegerArrayList("movesList", movesList);
             i.putExtras(extras);
             startActivity(i);
             finish();

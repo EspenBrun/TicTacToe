@@ -15,4 +15,5 @@
     <string name="won">\u0020won!</string>
     <string name="lost">\u0020lost.</string>
     <string name="draw">Draw!</string>
+    <string name="moves_per_match">Moves per match:</string>
 </resources>
